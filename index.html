@@ -5,30 +5,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .winner {
-            color: green;
-        }
-
-        .loser {
-            color: red;
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Score Keeper</title>
 
 <body>
-    <h1><span id="team1Display">0</span> to <span id="team2Display">0</span></h1>
-    <select name="" id="playto">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="25">25</option>
-    </select>
-    <button id="team1Button">+1 Team One</button>
-    <button id="team2Button">+2 Team Two</button>
-    <button id="reset">Reset</button>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-16by9">
+                                <img src="/img/d02987f406659f0094747236ddae3f76.jpg" alt="">
+                            </figure>
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title ">
+                                Volleyball Socre Keeper
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-size-1"><span id="team1Display">0</span> to <span
+                                        id="team2Display">0</span></h1>
+                                <p class="subtitle">Use the button below to keep score</p>
+
+                                <label for="playto" class="label is-large is-inline">Playing To</label>
+                                <div class="select is-rounded">
+                                    <select name="" id="playto">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button id="team1Button" class="is-primary button card-footer-item is-large">+1 Team
+                                One</button>
+                            <button id="team2Button" class="is-info button card-footer-item is-large">+2 Team
+                                One</button>
+                            <button id="reset"
+                                class="is-warning is-light button card-footer-item is-large">Reset</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

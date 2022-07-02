@@ -16,8 +16,10 @@ team1Button.addEventListener('click', function () {
         team1Score += 1; // every click increments one
         if (team1Score === winningScore) {
             isGameover = true;
-            team1Display.classList.add('winner');
-            team2Display.classList.add('loser');
+            team1Display.classList.add('has-text-success');
+            team2Display.classList.add('has-text-danger');
+            team1Button.disabled = true;
+            team2Button.disabled = true;
         }
         team1Display.textContent = team1Score;
     }
@@ -28,8 +30,10 @@ team2Button.addEventListener('click', function () {
         team2Score += 1; // every click increments one
         if (team2Score === winningScore) {
             isGameover = true;
-            team2Display.classList.add('winner');
-            team1Display.classList.add('loser');
+            team2Display.classList.add('has-text-success');
+            team1Display.classList.add('has-text-danger');
+            team2Button.disabled = true;
+            team1Button.disabled = true;
         }
         team2Display.textContent = team2Score;
     }
@@ -48,6 +52,8 @@ function reset() {
     team2Score = 0;
     team1Display.textContent = 0;
     team2Display.textContent = 0;
-    team1Display.classList.remove('winner', 'loser');
-    team2Display.classList.remove('winner', 'loser');
+    team1Display.classList.remove('has-text-success', 'has-text-danger');
+    team2Display.classList.remove('has-text-success', 'has-text-danger');
+    team1Button.disabled = false;
+    team2Button.disabled = false;
 }
