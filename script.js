@@ -8,7 +8,7 @@ const winningScoreSelect = document.querySelector('#playto');
 
 let team1Score = 0;
 let team2Score = 0;
-let winningScore = 10;
+let winningScore = 5;
 let isGameover = false;
 
 team1Button.addEventListener('click', function () {
@@ -16,6 +16,8 @@ team1Button.addEventListener('click', function () {
         team1Score += 1; // every click increments one
         if (team1Score === winningScore) {
             isGameover = true;
+            team1Display.classList.add('winner');
+            team2Display.classList.add('loser');
         }
         team1Display.textContent = team1Score;
     }
@@ -26,22 +28,26 @@ team2Button.addEventListener('click', function () {
         team2Score += 1; // every click increments one
         if (team2Score === winningScore) {
             isGameover = true;
+            team2Display.classList.add('winner');
+            team1Display.classList.add('loser');
         }
         team2Display.textContent = team2Score;
     }
 })
 
 winningScoreSelect.addEventListener('change', function () {
-    winnigScore = parseInt(this.value);
-    reset ();
+    winningScore = parseInt(this.value);
+    reset();
 })
 
-resetButton.addEventListener('click', reset) 
+resetButton.addEventListener('click', reset)
 
-function reset () {
+function reset() {
     isGameover = false;
     team1Score = 0;
     team2Score = 0;
     team1Display.textContent = 0;
     team2Display.textContent = 0;
+    team1Display.classList.remove('winner', 'loser');
+    team2Display.classList.remove('winner', 'loser');
 }
