@@ -7,17 +7,24 @@ const team2Display = document.querySelector('#team2Display');
 let team1Score = 0;
 let team2Score = 0;
 let winningScore = 10;
+let isGameover = false;
 
 team1Button.addEventListener('click', function () {
-    if (team1Score !== winningScore) {
+    if (!isGameover) {   // if not game over
         team1Score += 1; // every click increments one
+        if (team1Score === winningScore) {
+            isGameover = true;
+        }
         team1Display.textContent = team1Score;
     }
 })
 
 team2Button.addEventListener('click', function () {
-    if (team2Score !== winningScore) { // if team 2 score is not equal to the winning score 
+    if (!isGameover) {
         team2Score += 1; // every click increments one
+        if (team2Score === winningScore) {
+            isGameover = true;
+        }
         team2Display.textContent = team2Score;
     }
 })
