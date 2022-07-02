@@ -1,5 +1,6 @@
 const team1Button = document.querySelector('#team1Button');
 const team2Button = document.querySelector('#team2Button');
+const resetButton = document.querySelector('#reset');
 const team1Display = document.querySelector('#team1Display');
 const team2Display = document.querySelector('#team2Display');
 
@@ -27,4 +28,12 @@ team2Button.addEventListener('click', function () {
         }
         team2Display.textContent = team2Score;
     }
+})
+
+resetButton.addEventListener('click', function() {
+    isGameover = false;
+    team1Score = 0;
+    team2Score = 0;
+    team1Display.textContent = 0;
+    team2Display.textContent = 0;
 })
