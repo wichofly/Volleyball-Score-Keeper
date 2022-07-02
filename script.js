@@ -3,6 +3,7 @@ const team2Button = document.querySelector('#team2Button');
 const resetButton = document.querySelector('#reset');
 const team1Display = document.querySelector('#team1Display');
 const team2Display = document.querySelector('#team2Display');
+const winningScoreSelect = document.querySelector('#playto');
 
 
 let team1Score = 0;
@@ -28,6 +29,10 @@ team2Button.addEventListener('click', function () {
         }
         team2Display.textContent = team2Score;
     }
+})
+
+winningScoreSelect.addEventListener('change', function () {
+    winnigScore = parseInt(this.value)
 })
 
 resetButton.addEventListener('click', function() {
