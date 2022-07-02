@@ -32,13 +32,16 @@ team2Button.addEventListener('click', function () {
 })
 
 winningScoreSelect.addEventListener('change', function () {
-    winnigScore = parseInt(this.value)
+    winnigScore = parseInt(this.value);
+    reset ();
 })
 
-resetButton.addEventListener('click', function() {
+resetButton.addEventListener('click', reset) 
+
+function reset () {
     isGameover = false;
     team1Score = 0;
     team2Score = 0;
     team1Display.textContent = 0;
     team2Display.textContent = 0;
-})
+}
