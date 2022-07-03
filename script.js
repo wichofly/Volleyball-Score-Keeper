@@ -14,7 +14,7 @@ const team2 = {
 
 const resetButton = document.querySelector('#reset');
 const winningScoreSelect = document.querySelector('#playto');
-const winnerText = document.queryCommandValue('#winner')
+const winnerText = document.querySelector('#winner')
 
 let winningScore = 5;
 let isGameover = false;
@@ -34,7 +34,6 @@ function updateScores(player, opponent) {
     }
   }
   player.display.textContent = player.score;
-
 }
 
 team1.button.addEventListener('click', function () {
@@ -59,6 +58,6 @@ function reset() {
     team.display.textContent = 0;
     team.display.classList.remove('has-text-success', 'has-text-danger');
     team.button.disabled = false;
+    winnerText.textContent = '';
   }
-  winnerText.textContent = '';
 }
